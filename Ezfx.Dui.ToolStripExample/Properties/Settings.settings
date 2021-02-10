@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ToolStripExample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="package" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Scikit-Learn</Value>
+    </Setting>
+    <Setting Name="category" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Regression</Value>
+    </Setting>
+    <Setting Name="algorithm" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LinearRegression</Value>
+    </Setting>
+    <Setting Name="dataset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Boston.csv</Value>
+    </Setting>
+    <Setting Name="gpu" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="l1" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="l1_ratio" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="l2" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="l2_ratio" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="gpu_number" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="multithread" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="threads" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
