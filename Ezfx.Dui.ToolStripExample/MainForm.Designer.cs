@@ -1,7 +1,7 @@
 ﻿
 namespace ToolStripExample
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace ToolStripExample
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.packageTextBox = new System.Windows.Forms.ToolStripTextBox();
@@ -40,7 +40,7 @@ namespace ToolStripExample
             this.algorithmTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.datasetTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.runButton = new System.Windows.Forms.ToolStripButton();
             this.historyButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.his2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,22 +56,29 @@ namespace ToolStripExample
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hisotryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookmarkMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookmarkButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -85,9 +92,10 @@ namespace ToolStripExample
             this.algorithmTextBox,
             this.toolStripLabel4,
             this.datasetTextBox,
-            this.toolStripButton1,
-            this.historyButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.runButton,
+            this.historyButton,
+            this.bookmarkButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(912, 25);
             this.toolStrip1.TabIndex = 0;
@@ -101,7 +109,6 @@ namespace ToolStripExample
             // 
             // packageTextBox
             // 
-            this.packageTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.packageTextBox.Name = "packageTextBox";
             this.packageTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -113,7 +120,6 @@ namespace ToolStripExample
             // 
             // categoryTextBox
             // 
-            this.categoryTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.categoryTextBox.Name = "categoryTextBox";
             this.categoryTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -125,7 +131,6 @@ namespace ToolStripExample
             // 
             // algorithmTextBox
             // 
-            this.algorithmTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.algorithmTextBox.Name = "algorithmTextBox";
             this.algorithmTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -137,19 +142,18 @@ namespace ToolStripExample
             // 
             // datasetTextBox
             // 
-            this.datasetTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datasetTextBox.Name = "datasetTextBox";
             this.datasetTextBox.Size = new System.Drawing.Size(100, 25);
             // 
-            // toolStripButton1
+            // runButton
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(32, 22);
-            this.toolStripButton1.Text = "Run";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.runButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.runButton.Image = ((System.Drawing.Image)(resources.GetObject("runButton.Image")));
+            this.runButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.runButton.Name = "runButton";
+            this.runButton.Size = new System.Drawing.Size(32, 22);
+            this.runButton.Text = "Run";
+            this.runButton.Click += new System.EventHandler(this.runButton_Click);
             // 
             // historyButton
             // 
@@ -165,7 +169,7 @@ namespace ToolStripExample
             // his2ToolStripMenuItem
             // 
             this.his2ToolStripMenuItem.Name = "his2ToolStripMenuItem";
-            this.his2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.his2ToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.his2ToolStripMenuItem.Text = "his2";
             // 
             // label1
@@ -276,6 +280,24 @@ namespace ToolStripExample
             this.label16.TabIndex = 26;
             this.label16.Text = "L1:";
             // 
+            // textBox13
+            // 
+            this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "l2_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox13.Location = new System.Drawing.Point(495, 158);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 31;
+            this.textBox13.Text = "0.5";
+            // 
+            // textBox15
+            // 
+            this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "l1_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox15.Location = new System.Drawing.Point(495, 106);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(100, 20);
+            this.textBox15.TabIndex = 27;
+            this.textBox15.Text = "0.5";
+            // 
             // numericUpDown2
             // 
             this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ToolStripExample.Properties.Settings.Default, "threads", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -343,24 +365,6 @@ namespace ToolStripExample
             this.checkBox1.Text = "L1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox13
-            // 
-            this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "l2_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox13.Location = new System.Drawing.Point(495, 158);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 31;
-            this.textBox13.Text = "0.5";
-            // 
-            // textBox15
-            // 
-            this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "l1_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox15.Location = new System.Drawing.Point(495, 106);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 27;
-            this.textBox15.Text = "0.5";
-            // 
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "dataset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -397,7 +401,53 @@ namespace ToolStripExample
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = global::ToolStripExample.Properties.Settings.Default.package;
             // 
-            // Form1
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.hisotryToolStripMenuItem,
+            this.bookmarkMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(912, 24);
+            this.menuStrip1.TabIndex = 39;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // hisotryToolStripMenuItem
+            // 
+            this.hisotryToolStripMenuItem.Name = "hisotryToolStripMenuItem";
+            this.hisotryToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.hisotryToolStripMenuItem.Text = "Hisotry";
+            // 
+            // bookmarkMenuItem
+            // 
+            this.bookmarkMenuItem.Name = "bookmarkMenuItem";
+            this.bookmarkMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.bookmarkMenuItem.Text = "Bookmarks";
+            // 
+            // bookmarkButton
+            // 
+            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
+            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bookmarkButton.Name = "bookmarkButton";
+            this.bookmarkButton.Size = new System.Drawing.Size(79, 22);
+            this.bookmarkButton.Text = "Bookmarks";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -427,14 +477,18 @@ namespace ToolStripExample
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "MainForm";
+            this.Text = "Main Form";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,7 +505,7 @@ namespace ToolStripExample
         private System.Windows.Forms.ToolStripTextBox algorithmTextBox;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripTextBox datasetTextBox;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton runButton;
         private System.Windows.Forms.ToolStripDropDownButton historyButton;
         private System.Windows.Forms.ToolStripMenuItem his2ToolStripMenuItem;
         private System.Windows.Forms.Label label1;
@@ -479,6 +533,12 @@ namespace ToolStripExample
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hisotryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton bookmarkButton;
+        private System.Windows.Forms.ToolStripMenuItem bookmarkMenuItem;
     }
 }
 

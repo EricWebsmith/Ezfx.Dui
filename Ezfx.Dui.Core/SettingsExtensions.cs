@@ -4,12 +4,23 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace Ezfx.Dui
 {
     public static class SettingsExtensions
     {
-        public static void Save2Local(this ApplicationSettingsBase settings, bool saveHistory = true)
+
+        static BindingContext bc = new BindingContext();
+
+
+        public static void Bind(this ApplicationSettingsBase settings, string key, Control control, string controlProperty = "Text")
+        {
+            control.BindingContext = bc;
+            control.DataBindings.Add(new Binding(controlProperty, settings, key, true, DataSourceUpdateMode.OnPropertyChanged));
+        }
+
+        public static void Save2Json(this ApplicationSettingsBase settings, bool saveHistory = true)
         {
             string appName = settings.GetType().Assembly.GetName().Name;
             Dictionary<string, object> configDict = new Dictionary<string, object>();
@@ -50,10 +61,8 @@ namespace Ezfx.Dui
             return (ApplicationSettingsBase)pi.GetValue(null, null);
         }
 
-        public static void LoadHistory(this ApplicationSettingsBase settings, string timeStamp)
+        public static void LoadJson(this ApplicationSettingsBase settings, string jsonPath)
         {
-            string appName = settings.GetType().Assembly.GetName().Name;
-            string jsonPath = $"{appName}.History/{timeStamp}.json";
             Dictionary<string, object> configDict = new Dictionary<string, object>();
             Newtonsoft.Json.JsonSerializer jsonSerializer = new Newtonsoft.Json.JsonSerializer();
             using (StreamReader sw = new StreamReader(jsonPath))
