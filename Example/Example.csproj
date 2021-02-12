@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E0E80F30-4BBB-457D-8476-C5B100432B0D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ToolStripExample</RootNamespace>
-    <AssemblyName>ToolStripExample</AssemblyName>
+    <RootNamespace>Example</RootNamespace>
+    <AssemblyName>Example</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +68,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Properties\DataSources\Ezfx.Dui.ToolStripExample.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\ToolStripExample.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,9 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ezfx.Dui.Core\Ezfx.Dui.Core.csproj">
+    <ProjectReference Include="..\Ezfx.Dui.Core\Ezfx.Dui.csproj">
       <Project>{48cc7fad-ecee-4ef6-89be-4ea9410d055e}</Project>
-      <Name>Ezfx.Dui.Core</Name>
+      <Name>Ezfx.Dui</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

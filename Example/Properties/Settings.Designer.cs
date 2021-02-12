@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ToolStripExample.Properties {
+namespace Example.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -37,7 +37,7 @@ namespace ToolStripExample.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Regression")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string category {
             get {
                 return ((string)(this["category"]));
@@ -134,9 +134,9 @@ namespace ToolStripExample.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal gpu_number {
+        public int gpu_number {
             get {
-                return ((decimal)(this["gpu_number"]));
+                return ((int)(this["gpu_number"]));
             }
             set {
                 this["gpu_number"] = value;
@@ -158,12 +158,24 @@ namespace ToolStripExample.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public decimal threads {
+        public int threads {
             get {
-                return ((decimal)(this["threads"]));
+                return ((int)(this["threads"]));
             }
             set {
                 this["threads"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("gini")]
+        public string dt {
+            get {
+                return ((string)(this["dt"]));
+            }
+            set {
+                this["dt"] = value;
             }
         }
     }

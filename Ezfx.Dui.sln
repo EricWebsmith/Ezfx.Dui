@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ezfx.Dui.Core", "Ezfx.Dui.Core\Ezfx.Dui.Core.csproj", "{48CC7FAD-ECEE-4EF6-89BE-4EA9410D055E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ezfx.Dui", "Ezfx.Dui.Core\Ezfx.Dui.csproj", "{48CC7FAD-ECEE-4EF6-89BE-4EA9410D055E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolStripExample", "Ezfx.Dui.ToolStripExample\ToolStripExample.csproj", "{E0E80F30-4BBB-457D-8476-C5B100432B0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{E0E80F30-4BBB-457D-8476-C5B100432B0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

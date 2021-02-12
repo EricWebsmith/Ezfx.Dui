@@ -10,13 +10,10 @@ namespace Ezfx.Dui
 {
     public static class SettingsExtensions
     {
-
-        static BindingContext bc = new BindingContext();
-
-
         public static void Bind(this ApplicationSettingsBase settings, string key, Control control, string controlProperty = "Text")
         {
-            control.BindingContext = bc;
+
+            control.BindingContext = control.FindForm().BindingContext;
             control.DataBindings.Add(new Binding(controlProperty, settings, key, true, DataSourceUpdateMode.OnPropertyChanged));
         }
 
@@ -84,7 +81,7 @@ namespace Ezfx.Dui
                 }
                 else if (sp.PropertyType == typeof(int))
                 {
-                    settings[sp.Name] = (int)configDict[sp.Name];
+                    settings[sp.Name] = (int)(long)configDict[sp.Name];
                 }
                 else if (sp.PropertyType == typeof(float))
                 {
@@ -96,7 +93,7 @@ namespace Ezfx.Dui
                 }
                 else if (sp.PropertyType == typeof(decimal))
                 {
-                    settings[sp.Name] = (decimal)(double)configDict[sp.Name];
+                    settings[sp.Name] = (decimal)(long)configDict[sp.Name];
                 }
                 else
                 {

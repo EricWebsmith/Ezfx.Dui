@@ -50,6 +50,7 @@
     <Compile Include="BookmarkUI.cs" />
     <Compile Include="HistoryUI.cs" />
     <Compile Include="ExternalProcess.cs" />
+    <Compile Include="RadioButtonGroupUI.cs" />
     <Compile Include="SettingsExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

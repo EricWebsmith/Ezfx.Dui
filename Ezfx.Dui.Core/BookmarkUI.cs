@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Ezfx.Dui
 {
+    /// <summary>
+    /// The Bookmark UI class.
+    /// Add bookmark menu items to the UI.
+    /// </summary>
     public static class BookmarkUI
     {
         const string BOOKMARKS_FOLDER = "Bookmarks";

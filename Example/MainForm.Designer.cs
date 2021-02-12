@@ -1,5 +1,5 @@
 ﻿
-namespace ToolStripExample
+namespace Example
 {
     partial class MainForm
     {
@@ -43,6 +43,7 @@ namespace ToolStripExample
             this.runButton = new System.Windows.Forms.ToolStripButton();
             this.historyButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.his2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookmarkButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,6 +59,13 @@ namespace ToolStripExample
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hisotryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookmarkMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label9 = new System.Windows.Forms.Label();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -68,17 +76,20 @@ namespace ToolStripExample
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hisotryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookmarkMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookmarkButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.categoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.clusteringRadioButton = new System.Windows.Forms.RadioButton();
+            this.classificationRadioButton = new System.Windows.Forms.RadioButton();
+            this.regressionRadioButton = new System.Windows.Forms.RadioButton();
+            this.packageGroupBox = new System.Windows.Forms.GroupBox();
+            this.sparkRadioButton = new System.Windows.Forms.RadioButton();
+            this.scikitLearnRadioButton = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.categoryGroupBox.SuspendLayout();
+            this.packageGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -109,6 +120,7 @@ namespace ToolStripExample
             // 
             // packageTextBox
             // 
+            this.packageTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.packageTextBox.Name = "packageTextBox";
             this.packageTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -120,6 +132,7 @@ namespace ToolStripExample
             // 
             // categoryTextBox
             // 
+            this.categoryTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.categoryTextBox.Name = "categoryTextBox";
             this.categoryTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -131,6 +144,7 @@ namespace ToolStripExample
             // 
             // algorithmTextBox
             // 
+            this.algorithmTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.algorithmTextBox.Name = "algorithmTextBox";
             this.algorithmTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -142,6 +156,7 @@ namespace ToolStripExample
             // 
             // datasetTextBox
             // 
+            this.datasetTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datasetTextBox.Name = "datasetTextBox";
             this.datasetTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -171,6 +186,15 @@ namespace ToolStripExample
             this.his2ToolStripMenuItem.Name = "his2ToolStripMenuItem";
             this.his2ToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.his2ToolStripMenuItem.Text = "his2";
+            // 
+            // bookmarkButton
+            // 
+            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
+            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bookmarkButton.Name = "bookmarkButton";
+            this.bookmarkButton.Size = new System.Drawing.Size(79, 22);
+            this.bookmarkButton.Text = "Bookmarks";
             // 
             // label1
             // 
@@ -202,11 +226,11 @@ namespace ToolStripExample
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 165);
+            this.label4.Location = new System.Drawing.Point(66, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Algorithm:";
+            this.label4.Text = "Dataset:";
             // 
             // label5
             // 
@@ -282,7 +306,7 @@ namespace ToolStripExample
             // 
             // textBox13
             // 
-            this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "l2_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "l2_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox13.Location = new System.Drawing.Point(495, 158);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(100, 20);
@@ -291,115 +315,12 @@ namespace ToolStripExample
             // 
             // textBox15
             // 
-            this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "l1_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "l1_ratio", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox15.Location = new System.Drawing.Point(495, 106);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(100, 20);
             this.textBox15.TabIndex = 27;
             this.textBox15.Text = "0.5";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ToolStripExample.Properties.Settings.Default, "threads", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown2.Location = new System.Drawing.Point(317, 162);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown2.TabIndex = 38;
-            this.numericUpDown2.Value = global::ToolStripExample.Properties.Settings.Default.threads;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = global::ToolStripExample.Properties.Settings.Default.multithread;
-            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ToolStripExample.Properties.Settings.Default, "multithread", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBox4.Location = new System.Drawing.Point(317, 139);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(78, 17);
-            this.checkBox4.TabIndex = 37;
-            this.checkBox4.Text = "Multithread";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Checked = global::ToolStripExample.Properties.Settings.Default.gpu;
-            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ToolStripExample.Properties.Settings.Default, "gpu", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBox3.Location = new System.Drawing.Point(317, 88);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(49, 17);
-            this.checkBox3.TabIndex = 36;
-            this.checkBox3.Text = "GPU";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::ToolStripExample.Properties.Settings.Default, "gpu_number", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.Location = new System.Drawing.Point(317, 111);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown1.TabIndex = 35;
-            this.numericUpDown1.Value = global::ToolStripExample.Properties.Settings.Default.gpu_number;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = global::ToolStripExample.Properties.Settings.Default.l2;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ToolStripExample.Properties.Settings.Default, "l2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBox2.Location = new System.Drawing.Point(495, 134);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(38, 17);
-            this.checkBox2.TabIndex = 34;
-            this.checkBox2.Text = "L1";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = global::ToolStripExample.Properties.Settings.Default.l1;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ToolStripExample.Properties.Settings.Default, "l1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBox1.Location = new System.Drawing.Point(495, 82);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(38, 17);
-            this.checkBox1.TabIndex = 33;
-            this.checkBox1.Text = "L1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "dataset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox4.Location = new System.Drawing.Point(119, 162);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = global::ToolStripExample.Properties.Settings.Default.dataset;
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "category", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox3.Location = new System.Drawing.Point(119, 110);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.Text = global::ToolStripExample.Properties.Settings.Default.category;
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "algorithm", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox2.Location = new System.Drawing.Point(119, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = global::ToolStripExample.Properties.Settings.Default.algorithm;
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ToolStripExample.Properties.Settings.Default, "package", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox1.Location = new System.Drawing.Point(119, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = global::ToolStripExample.Properties.Settings.Default.package;
             // 
             // menuStrip1
             // 
@@ -438,20 +359,216 @@ namespace ToolStripExample
             this.bookmarkMenuItem.Size = new System.Drawing.Size(78, 20);
             this.bookmarkMenuItem.Text = "Bookmarks";
             // 
-            // bookmarkButton
+            // label9
             // 
-            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
-            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bookmarkButton.Name = "bookmarkButton";
-            this.bookmarkButton.Size = new System.Drawing.Size(79, 22);
-            this.bookmarkButton.Text = "Bookmarks";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(61, 247);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Category:";
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "category", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(119, 244);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.categoryComboBox.TabIndex = 40;
+            this.categoryComboBox.Text = global::Example.Properties.Settings.Default.category;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Example.Properties.Settings.Default, "threads", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown2.Location = new System.Drawing.Point(317, 162);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown2.TabIndex = 38;
+            this.numericUpDown2.Value = global::Example.Properties.Settings.Default.threads;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Checked = global::Example.Properties.Settings.Default.multithread;
+            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Example.Properties.Settings.Default, "multithread", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox4.Location = new System.Drawing.Point(317, 139);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(78, 17);
+            this.checkBox4.TabIndex = 37;
+            this.checkBox4.Text = "Multithread";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = global::Example.Properties.Settings.Default.gpu;
+            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Example.Properties.Settings.Default, "gpu", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox3.Location = new System.Drawing.Point(317, 88);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(49, 17);
+            this.checkBox3.TabIndex = 36;
+            this.checkBox3.Text = "GPU";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::Example.Properties.Settings.Default, "gpu_number", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.Location = new System.Drawing.Point(317, 111);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown1.TabIndex = 35;
+            this.numericUpDown1.Value = global::Example.Properties.Settings.Default.gpu_number;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = global::Example.Properties.Settings.Default.l2;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Example.Properties.Settings.Default, "l2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox2.Location = new System.Drawing.Point(495, 134);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(38, 17);
+            this.checkBox2.TabIndex = 34;
+            this.checkBox2.Text = "L1";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = global::Example.Properties.Settings.Default.l1;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::Example.Properties.Settings.Default, "l1", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox1.Location = new System.Drawing.Point(495, 82);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(38, 17);
+            this.checkBox1.TabIndex = 33;
+            this.checkBox1.Text = "L1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "dataset", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox4.Location = new System.Drawing.Point(119, 162);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 7;
+            this.textBox4.Text = global::Example.Properties.Settings.Default.dataset;
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "category", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox3.Location = new System.Drawing.Point(119, 110);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 4;
+            this.textBox3.Text = global::Example.Properties.Settings.Default.category;
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "algorithm", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox2.Location = new System.Drawing.Point(119, 136);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.Text = global::Example.Properties.Settings.Default.algorithm;
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Example.Properties.Settings.Default, "package", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox1.Location = new System.Drawing.Point(119, 84);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.Text = global::Example.Properties.Settings.Default.package;
+            // 
+            // categoryGroupBox
+            // 
+            this.categoryGroupBox.Controls.Add(this.clusteringRadioButton);
+            this.categoryGroupBox.Controls.Add(this.classificationRadioButton);
+            this.categoryGroupBox.Controls.Add(this.regressionRadioButton);
+            this.categoryGroupBox.Location = new System.Drawing.Point(40, 308);
+            this.categoryGroupBox.Name = "categoryGroupBox";
+            this.categoryGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.categoryGroupBox.TabIndex = 47;
+            this.categoryGroupBox.TabStop = false;
+            this.categoryGroupBox.Text = "Category";
+            // 
+            // clusteringRadioButton
+            // 
+            this.clusteringRadioButton.AutoSize = true;
+            this.clusteringRadioButton.Location = new System.Drawing.Point(6, 65);
+            this.clusteringRadioButton.Name = "clusteringRadioButton";
+            this.clusteringRadioButton.Size = new System.Drawing.Size(71, 17);
+            this.clusteringRadioButton.TabIndex = 47;
+            this.clusteringRadioButton.TabStop = true;
+            this.clusteringRadioButton.Text = "Clustering";
+            this.clusteringRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // classificationRadioButton
+            // 
+            this.classificationRadioButton.AutoSize = true;
+            this.classificationRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.classificationRadioButton.Name = "classificationRadioButton";
+            this.classificationRadioButton.Size = new System.Drawing.Size(86, 17);
+            this.classificationRadioButton.TabIndex = 46;
+            this.classificationRadioButton.TabStop = true;
+            this.classificationRadioButton.Text = "Classification";
+            this.classificationRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // regressionRadioButton
+            // 
+            this.regressionRadioButton.AutoSize = true;
+            this.regressionRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.regressionRadioButton.Name = "regressionRadioButton";
+            this.regressionRadioButton.Size = new System.Drawing.Size(78, 17);
+            this.regressionRadioButton.TabIndex = 45;
+            this.regressionRadioButton.TabStop = true;
+            this.regressionRadioButton.Text = "Regression";
+            this.regressionRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // packageGroupBox
+            // 
+            this.packageGroupBox.Controls.Add(this.sparkRadioButton);
+            this.packageGroupBox.Controls.Add(this.scikitLearnRadioButton);
+            this.packageGroupBox.Location = new System.Drawing.Point(265, 308);
+            this.packageGroupBox.Name = "packageGroupBox";
+            this.packageGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.packageGroupBox.TabIndex = 48;
+            this.packageGroupBox.TabStop = false;
+            this.packageGroupBox.Text = "Package";
+            // 
+            // sparkRadioButton
+            // 
+            this.sparkRadioButton.AutoSize = true;
+            this.sparkRadioButton.Location = new System.Drawing.Point(6, 42);
+            this.sparkRadioButton.Name = "sparkRadioButton";
+            this.sparkRadioButton.Size = new System.Drawing.Size(53, 17);
+            this.sparkRadioButton.TabIndex = 48;
+            this.sparkRadioButton.TabStop = true;
+            this.sparkRadioButton.Text = "Spark";
+            this.sparkRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // scikitLearnRadioButton
+            // 
+            this.scikitLearnRadioButton.AutoSize = true;
+            this.scikitLearnRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.scikitLearnRadioButton.Name = "scikitLearnRadioButton";
+            this.scikitLearnRadioButton.Size = new System.Drawing.Size(81, 17);
+            this.scikitLearnRadioButton.TabIndex = 47;
+            this.scikitLearnRadioButton.TabStop = true;
+            this.scikitLearnRadioButton.Text = "Scikit-Learn";
+            this.scikitLearnRadioButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 503);
+            this.Controls.Add(this.packageGroupBox);
+            this.Controls.Add(this.categoryGroupBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -485,10 +602,14 @@ namespace ToolStripExample
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.categoryGroupBox.ResumeLayout(false);
+            this.categoryGroupBox.PerformLayout();
+            this.packageGroupBox.ResumeLayout(false);
+            this.packageGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,6 +660,15 @@ namespace ToolStripExample
         private System.Windows.Forms.ToolStripMenuItem hisotryToolStripMenuItem;
         private System.Windows.Forms.ToolStripDropDownButton bookmarkButton;
         private System.Windows.Forms.ToolStripMenuItem bookmarkMenuItem;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox categoryGroupBox;
+        private System.Windows.Forms.RadioButton clusteringRadioButton;
+        private System.Windows.Forms.RadioButton classificationRadioButton;
+        private System.Windows.Forms.RadioButton regressionRadioButton;
+        private System.Windows.Forms.GroupBox packageGroupBox;
+        private System.Windows.Forms.RadioButton sparkRadioButton;
+        private System.Windows.Forms.RadioButton scikitLearnRadioButton;
     }
 }
 
