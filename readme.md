@@ -24,7 +24,7 @@ As well as several classes to bind Winform controls to configuration.
 
 In the example, We demonstrate that a DUI can be developed by just dozens of lines.
 
-![](Images/screen.png)
+![](images/screen.png)
 
 **EZFX** stands for Easy Framework.
 
@@ -52,7 +52,7 @@ settings.Save2Json();
 
 Apply History and Bookmarks menus:
 
-![history](Images/history.png)
+![history](images/history.png)
 
 ```c#
 HistoryUI.Apply(hisotryToolStripMenuItem, 20);
@@ -68,7 +68,7 @@ settings.Bind("package", packageTextBox.TextBox);
 
 Bind configuration to radio buttons
 
-![radio buttons](Images/category.png)
+![radio buttons](images/category.png)
 
 ```C#
 RadioButtonGroupUI.Apply(settings, "package", scikitLearnRadioButton, sparkRadioButton);
