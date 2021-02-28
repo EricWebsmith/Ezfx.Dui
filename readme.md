@@ -10,7 +10,7 @@ We call it *Developer User Interface*. It is similar to the graphics user interf
 
 
 
-We use C# to develop is frontend. Because it is the most easy GUI tool for windows. It has a WYSIWYG design time. Developers can make a C# Winform GUI just by drag-and-drop.
+We use C# to develop is frontend. Because it is the most easy GUI tool for windows. It has a WYSIWYG design time. Developers can make a C# win-form GUI just by drag-and-drop.
 
 
 
@@ -18,7 +18,7 @@ We make it even easier by simplify the configuration to JSON. And save it to *hi
 
 
 
-As well as several classes to bind Winform controls to configuration.
+As well as several classes to bind win-form controls to configuration.
 
 
 
@@ -30,9 +30,11 @@ In the example, We demonstrate that a DUI can be developed by just dozens of lin
 
 
 
-## How to?
+## How to Use?
 
-Call bat files:
+### Call External Process
+
+**Call bat files**
 
 ```c#
 string batContent = "cd py \n";
@@ -43,38 +45,39 @@ ExternalProcess.Bat(batContent);
 
 
 
-Save C# configuration to JSON
+### Configuration
+
+We use
+
+**Save C# configuration to JSON**
 
 ```c#
 var settings = Properties.Settings.Default;
 settings.Save2Json();
 ```
 
-Apply History and Bookmarks menus:
-
-![history](images/history.png)
-
-```c#
-HistoryUI.Apply(hisotryToolStripMenuItem, 20);
-BookmarkUI.Apply(bookmarkButton, 20);
-```
-
-Bind configuration to toolstrip textbox:
+**Bind configuration to toolstrip textbox**
 
 ```c#
 var settings = Properties.Settings.Default;
 settings.Bind("package", packageTextBox.TextBox);
 ```
 
-Bind configuration to radio buttons
+**Bind configuration to radio buttons**
+
+First, in the design window, drag and drop a group box control and add three radio buttons in it.
 
 ![radio buttons](images/category.png)
 
+Then bind to the category property of the settings.
+
 ```C#
-RadioButtonGroupUI.Apply(settings, "package", scikitLearnRadioButton, sparkRadioButton);
+settings.BindRadios(settings, "category", categoryGroupBox);
 ```
 
-Bind configuration to combobox:
+This binds package to 
+
+**Bind configuration to combo-box**
 
 In constructor:
 
@@ -87,5 +90,16 @@ In the form load event:
 
 ```c#
 categoryComboBox.SelectedIndex = this.categoryComboBox.FindString(settings.category);
+```
+
+### History and Bookmarks
+
+**Apply History and Bookmarks menus**
+
+![history](images/history.png)
+
+```c#
+HistoryUI.AddMenuItems(hisotryToolStripMenuItem, 20);
+BookmarkUI.AddMenuItems(bookmarkButton, 20);
 ```
 

@@ -18,7 +18,7 @@ namespace Ezfx.Dui
     {
         const string BOOKMARKS_FOLDER = "Bookmarks";
 
-        public static void Apply(ToolStripDropDownItem bookmarkMenuItem, int itemCount = 20)
+        public static void AddMenuItems(this ToolStripDropDownItem bookmarkMenuItem, int itemCount = 20)
         {
             string appName = Assembly.GetEntryAssembly().GetName().Name;
             ApplicationSettingsBase settings = SettingsExtensions.GetSettings();

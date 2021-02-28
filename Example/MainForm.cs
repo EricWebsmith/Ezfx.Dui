@@ -26,16 +26,19 @@ namespace Example
 
             categoryComboBox.SelectedIndex = this.categoryComboBox.FindString(settings.category);
 
-            RadioButtonGroupUI.Apply(settings, "category", categoryGroupBox);
-            RadioButtonGroupUI.Apply(settings, "package", scikitLearnRadioButton, sparkRadioButton);
+            settings.BindRadios("category", categoryGroupBox);
+            settings.BindRadios("package", scikitLearnRadioButton, sparkRadioButton);
+
+            //RadioButtonGroupUI.Bind(settings, "category", categoryGroupBox);
+            //RadioButtonGroupUI.Bind(settings, "package", scikitLearnRadioButton, sparkRadioButton);
         }
 
         private void InitMenu()
         {
-            HistoryUI.Apply(historyButton, 20);
-            HistoryUI.Apply(hisotryToolStripMenuItem, 20);
-            BookmarkUI.Apply(bookmarkButton, 20);
-            BookmarkUI.Apply(bookmarkMenuItem, 20);
+            HistoryUI.AddMenuItems(historyButton, 20);
+            HistoryUI.AddMenuItems(hisotryToolStripMenuItem, 20);
+            BookmarkUI.AddMenuItems(bookmarkButton, 20);
+            BookmarkUI.AddMenuItems(bookmarkMenuItem, 20);
         }
 
         private void runButton_Click(object sender, EventArgs e)

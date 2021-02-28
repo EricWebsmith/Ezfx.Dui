@@ -17,6 +17,56 @@ namespace Ezfx.Dui
             control.DataBindings.Add(new Binding(controlProperty, settings, key, true, DataSourceUpdateMode.OnPropertyChanged));
         }
 
+        public static void BindRadios(this ApplicationSettingsBase settings, string key, Control parentControl)
+        {
+            List<RadioButton> radios = new List<RadioButton>();
+            foreach (Control control in parentControl.Controls)
+            {
+                switch (control)
+                {
+                    case RadioButton e:
+                        radios.Add(e);
+                        break;
+                }
+            }
+
+            BindRadios(settings, key, radios.ToArray());
+        }
+
+        public static void BindRadios(this ApplicationSettingsBase settings, string key, params RadioButton[] radios)
+        {
+
+            foreach (RadioButton radioButton in radios)
+            {
+                if (radioButton.Text == (string)settings[key])
+                {
+                    radioButton.Checked = true;
+                }
+
+                radioButton.CheckedChanged += (sender, e) => {
+                    if (radioButton.Checked)
+                    {
+                        settings[key] = radioButton.Text;
+                    }
+                };
+            }
+
+            settings.PropertyChanged += (sender, e) =>
+            {
+                foreach (RadioButton radioButton in radios)
+                {
+                    if (radioButton.Text == (string)settings[key])
+                    {
+                        radioButton.Checked = true;
+                    }
+                    else
+                    {
+                        radioButton.Checked = false;
+                    }
+                }
+            };
+        }
+
         public static void Save2Json(this ApplicationSettingsBase settings, bool saveHistory = true)
         {
             string appName = settings.GetType().Assembly.GetName().Name;
@@ -74,18 +124,36 @@ namespace Ezfx.Dui
 
             foreach (SettingsProperty sp in settings.Properties)
             {
+                if (!configDict.ContainsKey(sp.Name))
+                {
+                    continue;
+                }
 
                 if (sp.PropertyType == typeof(string))
+                {
+                    // Unboxing is not needed here, 
+                    // since both indexers return objects.
+                    settings[sp.Name] = configDict[sp.Name];
+                }
+                else if (sp.PropertyType == typeof(long))
                 {
                     settings[sp.Name] = configDict[sp.Name];
                 }
                 else if (sp.PropertyType == typeof(int))
                 {
+                    // first, unbox it to long.
+                    // then convert long to int.
                     settings[sp.Name] = (int)(long)configDict[sp.Name];
                 }
                 else if (sp.PropertyType == typeof(float))
                 {
+                    // first, unbox it to double
+                    // then convert is to float
                     settings[sp.Name] = (float)(double)configDict[sp.Name];
+                }
+                else if (sp.PropertyType == typeof(double))
+                {
+                    settings[sp.Name] = configDict[sp.Name];
                 }
                 else if (sp.PropertyType == typeof(bool))
                 {

@@ -14,7 +14,7 @@ namespace Ezfx.Dui
     {
         public const string HISTORY_FOLDER = "History";
 
-        public static void Apply(ToolStripDropDownItem button, int itemCount = 20)
+        public static void AddMenuItems(this ToolStripDropDownItem button, int itemCount = 20)
         {
             string appName = Assembly.GetEntryAssembly().GetName().Name;
             DirectoryInfo di = new DirectoryInfo($"{appName}.{HISTORY_FOLDER}");
