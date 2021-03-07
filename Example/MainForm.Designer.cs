@@ -83,6 +83,9 @@ namespace Example
             this.packageGroupBox = new System.Windows.Forms.GroupBox();
             this.sparkRadioButton = new System.Windows.Forms.RadioButton();
             this.scikitLearnRadioButton = new System.Windows.Forms.RadioButton();
+            this.vsCodeButton = new System.Windows.Forms.Button();
+            this.pyCharmButton = new System.Windows.Forms.Button();
+            this.sublimeButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -560,11 +563,44 @@ namespace Example
             this.scikitLearnRadioButton.Text = "Scikit-Learn";
             this.scikitLearnRadioButton.UseVisualStyleBackColor = true;
             // 
+            // vsCodeButton
+            // 
+            this.vsCodeButton.Location = new System.Drawing.Point(520, 292);
+            this.vsCodeButton.Name = "vsCodeButton";
+            this.vsCodeButton.Size = new System.Drawing.Size(132, 23);
+            this.vsCodeButton.TabIndex = 49;
+            this.vsCodeButton.Text = "Open in VS Code";
+            this.vsCodeButton.UseVisualStyleBackColor = true;
+            this.vsCodeButton.Click += new System.EventHandler(this.vsCodeButton_Click);
+            // 
+            // pyCharmButton
+            // 
+            this.pyCharmButton.Location = new System.Drawing.Point(520, 321);
+            this.pyCharmButton.Name = "pyCharmButton";
+            this.pyCharmButton.Size = new System.Drawing.Size(132, 23);
+            this.pyCharmButton.TabIndex = 50;
+            this.pyCharmButton.Text = "Open in PyCharm";
+            this.pyCharmButton.UseVisualStyleBackColor = true;
+            this.pyCharmButton.Click += new System.EventHandler(this.pyCharmButton_Click);
+            // 
+            // sublimeButton
+            // 
+            this.sublimeButton.Location = new System.Drawing.Point(520, 347);
+            this.sublimeButton.Name = "sublimeButton";
+            this.sublimeButton.Size = new System.Drawing.Size(132, 23);
+            this.sublimeButton.TabIndex = 51;
+            this.sublimeButton.Text = "Open in Sublime";
+            this.sublimeButton.UseVisualStyleBackColor = true;
+            this.sublimeButton.Click += new System.EventHandler(this.sublimeButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 503);
+            this.Controls.Add(this.sublimeButton);
+            this.Controls.Add(this.pyCharmButton);
+            this.Controls.Add(this.vsCodeButton);
             this.Controls.Add(this.packageGroupBox);
             this.Controls.Add(this.categoryGroupBox);
             this.Controls.Add(this.label9);
@@ -669,6 +705,9 @@ namespace Example
         private System.Windows.Forms.GroupBox packageGroupBox;
         private System.Windows.Forms.RadioButton sparkRadioButton;
         private System.Windows.Forms.RadioButton scikitLearnRadioButton;
+        private System.Windows.Forms.Button vsCodeButton;
+        private System.Windows.Forms.Button pyCharmButton;
+        private System.Windows.Forms.Button sublimeButton;
     }
 }
 

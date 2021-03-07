@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookmarkUI.cs" />
+    <Compile Include="ApplicationFinder.cs" />
+    <Compile Include="CodeOpener.cs" />
     <Compile Include="HistoryUI.cs" />
     <Compile Include="ExternalProcess.cs" />
     <Compile Include="SettingsExtensions.cs" />

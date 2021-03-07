@@ -1,10 +1,10 @@
 # C# win-form for python development 
 
-In a data-related project, like machine learning, debugging the backend code can be torment. When you step into the code, you get the 2d-, 3d-or even nd-array. And they are not readable. This happens to other projects, too. For example, an html post process for a spider.
+In a data-related project, like machine learning, debugging the backend code can be torment. When you step into the code, you get the 2d-, 3d-or even nd-arrays. And they are not readable. This happens to other projects, too. For example, html post process for a spider.
 
 
 
-In machine learn, there is a concept called **data visualization**. I would argue that other projects may need visualization also. (like html processing) . Can we ease the pan of development by visualization? The answer is yes.
+In machine learn, there is a concept called **data visualization**. I would argue that other projects may need visualization also. (like html processing) . We ease the pain of development by visualization.
 
 
 
@@ -30,7 +30,7 @@ C# is similar to java. If you do not use any framework like sprint boot, they ar
 
 ## Call Python from C#
 
-There are two ways to call python from C#. In the python 2 era, I use to use IronPython. But unfortunately, at this moment, IronPython 3, which is for python 3, is not available yet.
+There are two ways to call python from C#. In the python 2 era, I used to use IronPython. But unfortunately, at this moment, IronPython 3, which is for python 3, is not available yet. Also, 
 
 
 

@@ -53,5 +53,19 @@ namespace Example
             InitMenu();
         }
 
+        private void vsCodeButton_Click(object sender, EventArgs e)
+        {
+            CodeOpener.OpenByVSCode("py/script.py", 10, 5);
+        }
+
+        private void pyCharmButton_Click(object sender, EventArgs e)
+        {
+            CodeOpener.OpenByPyCharm("py/script.py");
+        }
+
+        private void sublimeButton_Click(object sender, EventArgs e)
+        {
+            CodeOpener.OpenBySublime("py/script.py", 10);
+        }
     }
 }
