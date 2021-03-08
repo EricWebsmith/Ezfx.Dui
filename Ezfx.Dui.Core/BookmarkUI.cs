@@ -72,7 +72,8 @@ namespace Ezfx.Dui
 
 
                 ToolStripMenuItem menuItem = new ToolStripMenuItem(fi.Name.Replace(".json", " ") + summary);
-                menuItem.Click += (sender, e)=> {
+                menuItem.Click += (sender, e) =>
+                {
                     settings.LoadJson(fi.FullName);
                 };
                 bookmarkMenuItem.DropDownItems.Add(menuItem);

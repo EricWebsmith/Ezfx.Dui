@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace Ezfx.Dui
 {
@@ -11,7 +6,10 @@ namespace Ezfx.Dui
     {
         public static void Open(string exePath, string file)
         {
-
+            Process p = new Process();
+            p.StartInfo.FileName = exePath;
+            p.StartInfo.Arguments = file;
+            p.Start();
         }
 
         public static void OpenByVSCode(string file, int line = 0, int column = 0)
@@ -37,12 +35,27 @@ namespace Ezfx.Dui
             p.Start();
         }
 
-        public static void OpenBySublime(string file, int line=0)
+        public static void OpenBySublime(string file, int line = 0)
         {
             string exePath = ApplicationFinder.FindSublime();
             Process p = new Process();
             p.StartInfo.FileName = exePath;
             p.StartInfo.Arguments = $"\"{file}\":{line}";
+            p.Start();
+        }
+
+        /// According to 
+        /// https://docs.spyder-ide.org/current/options.html
+        /// You can only open a folder, not a file in spyder.
+        /// In face, that does not help much.
+        /// We will wait spyder to provide that option,
+        /// although, I do not think it is going to happen.
+        public static void OpenBySpyder(string file)
+        {
+            string exePath = ApplicationFinder.FindSpyder();
+            Process p = new Process();
+            p.StartInfo.FileName = "Spyder";
+            p.StartInfo.Arguments = $"-p \"{file}\"";
             p.Start();
         }
     }

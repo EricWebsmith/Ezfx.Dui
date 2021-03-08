@@ -1,10 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ezfx.Dui
 {
@@ -91,6 +87,12 @@ namespace Ezfx.Dui
         public static string FindSublime(string bindingKey = null)
         {
             string defaultPath = @"C:\Sublime Text Build 3211 x64\sublime_text.exe";
+            return Find(defaultPath, "", bindingKey);
+        }
+
+        public static string FindSpyder(string bindingKey = null)
+        {
+            string defaultPath = @"C:\ProgramData\Anaconda3\pythonw.exe";
             return Find(defaultPath, "", bindingKey);
         }
     }

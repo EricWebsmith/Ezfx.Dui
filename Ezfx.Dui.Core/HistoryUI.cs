@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Ezfx.Dui
 {
-    public static  class HistoryUI
+    public static class HistoryUI
     {
         public const string HISTORY_FOLDER = "History";
 
@@ -55,9 +55,9 @@ namespace Ezfx.Dui
                 }
 
                 string summary = string.Empty;
-                foreach(object value in configDict.Values)
+                foreach (object value in configDict.Values)
                 {
-                    if( value is string)
+                    if (value is string)
                     {
                         string svalue = value.ToString();
                         if (svalue.Length < 20)
@@ -68,7 +68,7 @@ namespace Ezfx.Dui
                 }
 
 
-                ToolStripMenuItem menuItem = new ToolStripMenuItem(fi.Name.Replace(".json", " ")+ summary);
+                ToolStripMenuItem menuItem = new ToolStripMenuItem(fi.Name.Replace(".json", " ") + summary);
                 menuItem.Click += MenuItem_Click;
                 button.DropDownItems.Add(menuItem);
             }

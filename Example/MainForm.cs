@@ -67,5 +67,11 @@ namespace Example
         {
             CodeOpener.OpenBySublime("py/script.py", 10);
         }
+
+
+        private void spyderButton_Click(object sender, EventArgs e)
+        {
+            CodeOpener.OpenBySpyder("py");
+        }
     }
 }

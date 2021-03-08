@@ -43,7 +43,8 @@ namespace Ezfx.Dui
                     radioButton.Checked = true;
                 }
 
-                radioButton.CheckedChanged += (sender, e) => {
+                radioButton.CheckedChanged += (sender, e) =>
+                {
                     if (radioButton.Checked)
                     {
                         settings[key] = radioButton.Text;

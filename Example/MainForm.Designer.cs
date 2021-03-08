@@ -86,6 +86,7 @@ namespace Example
             this.vsCodeButton = new System.Windows.Forms.Button();
             this.pyCharmButton = new System.Windows.Forms.Button();
             this.sublimeButton = new System.Windows.Forms.Button();
+            this.spyderButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -593,11 +594,22 @@ namespace Example
             this.sublimeButton.UseVisualStyleBackColor = true;
             this.sublimeButton.Click += new System.EventHandler(this.sublimeButton_Click);
             // 
+            // spyderButton
+            // 
+            this.spyderButton.Location = new System.Drawing.Point(520, 376);
+            this.spyderButton.Name = "spyderButton";
+            this.spyderButton.Size = new System.Drawing.Size(132, 23);
+            this.spyderButton.TabIndex = 52;
+            this.spyderButton.Text = "Open in Spyder";
+            this.spyderButton.UseVisualStyleBackColor = true;
+            this.spyderButton.Click += new System.EventHandler(this.spyderButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 503);
+            this.Controls.Add(this.spyderButton);
             this.Controls.Add(this.sublimeButton);
             this.Controls.Add(this.pyCharmButton);
             this.Controls.Add(this.vsCodeButton);
@@ -708,6 +720,7 @@ namespace Example
         private System.Windows.Forms.Button vsCodeButton;
         private System.Windows.Forms.Button pyCharmButton;
         private System.Windows.Forms.Button sublimeButton;
+        private System.Windows.Forms.Button spyderButton;
     }
 }
 
